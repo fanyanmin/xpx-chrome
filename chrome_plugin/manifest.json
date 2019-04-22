@@ -1,0 +1,32 @@
+{
+  "name": "获取信息",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "*********获取信息*********",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "contextMenus",
+    "webRequest",
+    "cookies",
+    "*://*.taobao.com/*",
+    "https://newkf.topchitu.com/customkpi/shop/92/viewkpi.shtml",
+    "https://athena.topchitu.com/*",
+    "http://tb.maijsoft.cn/index.php?r=export/index"
+  ],
+  "background": {
+    "scripts": ["eventPage.js","jquery-2.1.1.min.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>",
+        "http://192.168.33.10/xpxdata/api/collection/*"
+      ],
+      "js": ["jquery-2.1.1.min.js", "contentscript.js"]
+    }
+  ]
+}
